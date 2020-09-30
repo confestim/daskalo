@@ -28,14 +28,21 @@ def index():
         pedal2List = list(pedal2)
         reformedPedal1 = []
         reformedPedal2 = []
-        
+        x = sympy.symbols('x')
+                
         a = list(map(int, range(len(pedalList))))
         a = a[::-1]
   
         print("Rezultat:")
         for i in range(len(pedalList)):
-            reformedPedal1.append(f"{int(pedalList[i])}x^{a[i]}")
-            print(f"{int(pedalList[i])}x^{a[i]}")
+            if "0x" in f"{int(pedalList[i])}x^{a[i]}":
+                pass
+            elif "1x" in f"{int(pedalList[i])}x^{a[i]}":
+                reformedPedal1.append(f"{a[i]}")
+    
+            else:
+                reformedPedal1.append(f"{int(pedalList[i])}{x**a[i]}")
+                print(f"{int(pedalList[i])} {x**a[i]}")
             
 
         b = list(map(int, range(len(pedal2List)))) 
@@ -43,8 +50,16 @@ def index():
 
         print("Ostatuk")
         for i in range(len(pedal2List)):
-            reformedPedal2.append(f"{int(pedal2List[i])}x^{b[i]}")
-            print(f"{int(pedal2List[i])}x^{b[i]}")
-        flash(f"Rezultat = {reformedPedal1}, Ostatuk = {reformedPedal2}")
+            if "0x" in f"{int(pedal2List[i])}x^{b[i]}":
+                pass
+            elif "1x" in f"{int(pedal2List[i])}{x**b[i]}":
+                reformedPedal2.append(f"b[i]")
+
+            else:
+                reformedPedal2.append(f"{int(pedal2List[i])}{x**b[i]}")
+                print(f"{int(pedal2List[i])}{x**b[i]}")
+
+        flash(f"Резултат = {reformedPedal1}, Остатък = {reformedPedal2}")
+
     return render_template('index.html', lastResult=lastResult)
 

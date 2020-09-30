@@ -64,16 +64,16 @@
 
       </style>
     <meta charset="utf-8">
-    <title>XII math</title>
+    <title>XI math</title>
   </head>
   <body>
 	{% block content %}
       <div class="center">
-       <p> <span class="sketch-highlight"> Enter Coeffs  </span></p>
+       <p> <span class="sketch-highlight"> Вкарайте коефициенти  </span></p>
         <form method="POST" action="/">
-        	<label for="publicA" style="font-size:16px">Chislitel:</label><br>
+        	<label for="publicA" style="font-size:16px">Числител:</label><br>
         	<input type="text" name="publicA" style="font-size:16px" /><br>
-        	<label for="publicB" style="font-size:16px">Znamenatel:</label><br>
+        	<label for="publicB" style="font-size:16px">Знаменател:</label><br>
      		<input type="text" name="publicB" style="font-size:16px"</input><br>
             <input type="submit" value="Again?!" />
                   {% for message in get_flashed_messages() %}
