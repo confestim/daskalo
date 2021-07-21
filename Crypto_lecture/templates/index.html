@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    <style>
+      body {
+        font-family: 'ABeeZee';font-size: 36px;
+        font-color: black:
+      }
+      .center {
+        position: fixed;
+ 	 	top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+  		text-align:center;
+      }
+
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      </style>
+    <meta charset="utf-8">
+    <title>Eduteh</title>
+  </head>
+  <body>
+      <div class="center">
+       <p> <span class="sketch-highlight"> Напишете си ETH адреса!  </span></p>
+        <form method="POST" action="/">
+        	<label for="address" style="font-size:16px">Ето тук!:</label><br>
+        	<input type="text" name="adress" style="font-size:16px" /><br>
+        	<input type="submit" value="Дай ми пари!" />     
+        </form>
+        <p style="font-size:50%; color:red;">Моля, не злоупотребявайте. Един път на човек.</p>
+        {% if try_again %}
+        <p style="font-size:50%; color:red;">Това не е валиден ETH адрес!!</p>
+        {% endif %}
+    </div>
+    </body>
+</html>
